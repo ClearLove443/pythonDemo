@@ -14,7 +14,7 @@ root.tk.call('tk', 'scaling', ScaleFactor/75)
 root.withdraw()
 
 file_path = filedialog.askopenfilename()
-# print(file_path)
+print(file_path)
 
 print("输入sheet名:")
 sheetName = input()
