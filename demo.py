@@ -51,7 +51,6 @@ from abstest import (Myclass, fact, fact2, fact2_iter, get_square2, my_abs,
 # print(fact(1000)) #栈溢出
 # print(fact2(1000))  # 尾递归 由于编辑器没有对尾递归进行优化.还是会造成栈溢出
 
-# t0 = time.time()
 # a = get_square(1000100)
 # a_iter = iter(a)  # 迭代函数 iter，用于生成迭代器
 
@@ -71,7 +70,6 @@ from abstest import (Myclass, fact, fact2, fact2_iter, get_square2, my_abs,
 # with open(r"abstest.py", 'r', encoding='utf-8') as fp:
 #     contents = fp.readlines()
 # print(contents)
-
 
 # 删除文件
 # if os.path.exists("abstestbak.py"):
@@ -104,3 +102,28 @@ from abstest import (Myclass, fact, fact2, fact2_iter, get_square2, my_abs,
 # for i in y:
 #     print(i)
 #     print(y[i])
+
+# 遍历 list
+# for i in sql:  有 bug list多个值相同的时候，取的下标不正确
+#     try:
+#         await conn.fetch(i)
+#         hasChannel.append(sql.index(i) + 1)
+#     except Exception:
+#         noChannel.append(sql.index(i) + 1)
+
+# for i in range(len(sql)):
+#     try:
+#         await conn.fetch(sql[i])
+#         hasChannel.append(i + 1)
+#     except Exception:
+#         noChannel.append(i + 1)
+
+# 遍历 map
+# for key in sql:
+#     try:
+#         await conn.fetch(sql[key])
+#         hasChannel.append(key)
+#     except Exception:
+#         noChannel.append(key)
+# print('hasChannelCode', hasChannel)
+# print('noChannelCode', noChannel)
