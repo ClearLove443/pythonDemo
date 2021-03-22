@@ -3,12 +3,18 @@ import os
 import psycopg2
 from pykeyboard import PyKeyboard
 
-conn = psycopg2.connect(database='postgres', user='postgres',
-                        password='postgres', host='localhost', port='5432')
-conn.autocommit = True
+password = input('请输入数据密码:')
+try:
+    conn = psycopg2.connect(database='postgres', user='postgres',
+                            password=password, host='localhost', port='5432')
+    conn.autocommit = True
 
-cur = conn.cursor()
-
+    cur = conn.cursor()
+except:
+    input('密码输入错误，请重新执行。按回车键退出')
+    exit()
+else:
+    print('数据库连接成功')
 # try:
 #     cur.execute('drop role "ec_mcp_admin"')
 # except:
@@ -22,7 +28,7 @@ cur = conn.cursor()
 # except:
 #     print('用户创建失败')
 # else:
-#     print('用户创建成功')
+#     print('用户创建成功')postgres
 db_name = "ec_mcp_db"
 # db_name = input()
 
@@ -31,26 +37,24 @@ try:
         db_name + "' AND PID <> PG_BACKEND_PID()"
     cur.execute(sql)
 except:
-    print('连接断开失败')
+    input('连接断开失败')
 else:
     print('连接断开成功')
 
 try:
     cur.execute('drop database {};'.format(db_name))
 except:
-    print('数据库删除失败')
+    input('数据库删除失败')
 else:
     print('数据库删除成功')
 
 try:
     cur.execute('create database {};'.format(db_name))
 except:
-    print('数据库创建失败')
+    input('数据库创建失败')
 else:
     print('数据库创建成功')
 
-# rows = cur.fetchall()
-# print(rows)
 cur.close()
 conn.close()
 

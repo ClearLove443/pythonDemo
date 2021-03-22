@@ -6,5 +6,5 @@ def timer(func):  # 计算方法运行时间 timer() 是我们定义的装饰器
         t0 = time.time()
         func(*args, **kwds)
         t1 = time.time()
-        print('耗时%0.3f' % (t1-t0,), 's')
+        print('耗时%0.3f' % (t1 - t0,), 's')
     return wrapper
