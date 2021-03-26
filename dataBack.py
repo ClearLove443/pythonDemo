@@ -3,7 +3,10 @@ import os
 import psycopg2
 from pykeyboard import PyKeyboard
 
-password = input('请输入数据密码:')
+name = input('请输入成员名:')
+db_name = 'ec_mcp_db_' + name
+# password = input('请输入数据密码:')
+password = 'postgres'
 try:
     conn = psycopg2.connect(database='postgres', user='postgres',
                             password=password, host='localhost', port='5432')
@@ -29,7 +32,7 @@ else:
 #     print('用户创建失败')
 # else:
 #     print('用户创建成功')postgres
-db_name = "ec_mcp_db"
+# db_name = "ec_mcp_db"
 # db_name = input()
 
 try:
@@ -59,7 +62,8 @@ cur.close()
 conn.close()
 
 # os.system('getMac')
-os.system('pg_restore -U postgres -d ' + db_name + ' dataBack.dmp')
+os.system('pg_restore -U postgres -d ' +
+          db_name + ' dataBack_' + name + '.dmp')
 input('按回车键退出')
 # k = PyKeyboard()
 # k.type_string('pg_restore -U postgres -d ')
