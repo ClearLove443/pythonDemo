@@ -2,7 +2,9 @@ import os
 import threading
 
 reports = ['jo_member', 'jo_order', 'jo_product', 'jo_stock']
-filepath = 'C:\develop\workspace_vscode\\'
+# filepath = 'C:\develop\workspace_vscode\\'
+
+filepath = '.\\'
 
 
 def run_bat(i):  # 定义运行python文件函数
