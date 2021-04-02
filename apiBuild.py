@@ -1,7 +1,7 @@
 import os
 import threading
 
-reports = ['JO_member', 'JO_order', 'JO_product', 'JO_stock']
+reports = ['JO_member', 'JO_order', 'JO_product', 'JO_stock', 'JP_stub_server']
 filepath = 'C:\develop\workspace_vscode\\'
 
 
