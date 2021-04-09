@@ -6,21 +6,6 @@ import asyncpg
 
 from common import timer
 
-sql = '''
-        SELECT
-            CHANNEL_CODE
-            , MODULE_ID
-            , MODULE_VERSION_ID
-            , HTML_CONTENT 
-        FROM
-            EC.T_MODULE_VERSION 
-        WHERE
-            1 = 1 
-            AND MODULE_VERSION_ID IS NOT NULL 
-        ORDER BY
-            1
-    '''
-
 
 def asyncpgConnect(sql):  # asyncpg连接postgresql
     async def run():
@@ -56,6 +41,20 @@ def creatHtml(channelCode, moduleId, moduleVersionId, htmlContent):
 
 @timer
 def run():
+    sql = '''
+        SELECT
+            CHANNEL_CODE
+            , MODULE_ID
+            , MODULE_VERSION_ID
+            , HTML_CONTENT 
+        FROM
+            EC.T_MODULE_VERSION 
+        WHERE
+            1 = 1 
+            AND MODULE_VERSION_ID IS NOT NULL 
+        ORDER BY
+            1
+    '''
     asyncpgConnect(sql)
 
 
