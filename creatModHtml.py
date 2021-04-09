@@ -16,7 +16,7 @@ sql = '''
             EC.T_MODULE_VERSION 
         WHERE
             1 = 1 
-            AND HTML_CONTENT IS NOT NULL 
+            AND MODULE_VERSION_ID IS NOT NULL 
         ORDER BY
             1
     '''
@@ -50,8 +50,9 @@ def creatHtml(channelCode, moduleId, moduleVersionId, htmlContent):
 
     htmlFullName = htmlPath + htmlFileName
     with open(r"" + htmlFullName, "w", encoding='utf-8') as fp2:
-        fp2.write(htmlContent)
+        fp2.write(htmlContent if htmlContent != None else "")
         fp2.close
+
 
 @timer
 def run():
