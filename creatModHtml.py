@@ -13,10 +13,10 @@ def asyncpgConnect(sql):  # asyncpg连接postgresql
                                      database='ec_mcp_db', host='127.0.0.1', port='5432')
         # row2 = await conn.fetchrow(sql)
         # print(row2)
-        row1 = await conn.fetch(sql)
-        for i in row1:
-            creatHtml(i["channel_code"], i["module_id"],
-                      i["module_version_id"], i["html_content"])
+        rows = await conn.fetch(sql)
+        for row in rows:
+            creatHtml(row["channel_code"], row["module_id"],
+                      row["module_version_id"], row["html_content"])
 
         await conn.close()
 
