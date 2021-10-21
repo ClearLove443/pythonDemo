@@ -18,6 +18,7 @@ source env/Scripts/activate
 
 ```bash
 pip install -r requirements.txt
+pip install sasl-0.2.1-cp37-cp37m-win_amd64.whl
 ```
 # run it
 
