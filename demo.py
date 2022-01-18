@@ -80,7 +80,7 @@ from abstest import (Myclass, fact, fact2, fact2_iter, get_square2, my_abs,
 
 # "x" - 创建 - 将创建一个文件，如果文件存在则返回错误
 # "a" - 追加 - 如果指定的文件不存在，将创建一个文件
-# "w" - 写入 - 如果指定的文件不存在，将创建一个文件
+# "w" - 写入 - 如果指定的文件不存在，将创建一个文件，会覆盖原文件
 # with open(r"abstestbak.py", 'w', encoding='utf-8') as fp2:
 #     fp2.write("".join(contents))
 

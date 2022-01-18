@@ -6,6 +6,9 @@ Ues fastapi framework
 python -m pip install virtualenv
 python -m virtualenv env --python=python3.7
 source env/Scripts/activate
+
+# don't create __pycache__ file
+export PYTHONDONTWRITEBYTECODE=1
 ```
 
 ## installation
