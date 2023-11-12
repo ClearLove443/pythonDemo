@@ -1,3 +1,0 @@
-打包命令 pyinstaller -F demo.py
-执行命令 D:\workspace_python\demo\dist\demo.exe
-

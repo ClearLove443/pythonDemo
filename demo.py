@@ -34,8 +34,17 @@
 import json
 import os
 
-from abstest import (Myclass, fact, fact2, fact2_iter, get_square2, my_abs,
-                     power, square1, square2)
+from abstest import (
+    Myclass,
+    fact,
+    fact2,
+    fact2_iter,
+    get_square2,
+    my_abs,
+    power,
+    square1,
+    square2,
+)
 
 # a = abs
 # print(a(-22))
@@ -67,8 +76,11 @@ from abstest import (Myclass, fact, fact2, fact2_iter, get_square2, my_abs,
 #     fp.close()
 
 # 读取文件
-# with open(r"abstest.py", 'r', encoding='utf-8') as fp:
-#     contents = fp.readlines()
+file_path = "abstest.py"
+with open(file_path, "r", encoding="utf-8") as fp:
+    contents = fp.readlines()
+print(type(contents))
+contents2 = "".join(contents)
 # print(contents)
 
 # 删除文件
@@ -81,8 +93,10 @@ from abstest import (Myclass, fact, fact2, fact2_iter, get_square2, my_abs,
 # "x" - 创建 - 将创建一个文件，如果文件存在则返回错误
 # "a" - 追加 - 如果指定的文件不存在，将创建一个文件
 # "w" - 写入 - 如果指定的文件不存在，将创建一个文件，会覆盖原文件
-# with open(r"abstestbak.py", 'w', encoding='utf-8') as fp2:
-#     fp2.write("".join(contents))
+file_path = "abstestbak.py"
+with open(file_path, "a", encoding="utf-8") as fp2:
+    # fp2.write("".join(contents))
+    fp2.writelines(contents)
 
 
 # p1 = Myclass() # 创建新对象

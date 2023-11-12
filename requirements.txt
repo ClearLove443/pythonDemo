@@ -1,14 +1,12 @@
+openpyxl
+pandas
 autopep8==1.5.7
 thrift==0.15.0
 # sasl==0.2.1
 thrift-sasl==0.2.1
 pyhive==0.6.4
-
 impyla==0.14.0
 krbcontext==0.10
-
 pyspark==3.1.2
-
 PyUserInput==0.1.10
-
 requests==2.26.0

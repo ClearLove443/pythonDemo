@@ -1,10 +1,11 @@
-Ues fastapi framework
+# python demo
 
 ## environment
 
 ```bash
-python -m pip install virtualenv
-python -m virtualenv env --python=python3.7
+python -m venv env
+# python -m pip install virtualenv
+# python -m virtualenv env --python=python3.7
 source env/Scripts/activate
 
 # don't create __pycache__ file
@@ -38,9 +39,14 @@ pyinstaller -F demo.py
 
 ## Interactive Api docs upgrad
 
-go to http://127.0.0.1:8000/docs
+go to <http://127.0.0.1:8000/docs>
 
 ## sasl issue in windows
 
 thrift.transport.TTransport.TTransportException: Could not start SASL
 exec sasl.reg
+
+## package
+
+打包命令 pyinstaller -F demo.py
+执行命令 D:\workspace_python\demo\dist\demo.exe
